@@ -1,0 +1,17 @@
+// Program to Count Word Frequencies in a string 
+
+import java.util.*;
+class WordFrequenciesInString{
+    public static void main(String[] args) {
+        String str = "java is fun and java is powerful";
+        HashMap<String,Integer> map = new HashMap<>();
+        for(String subst:str.split(" ")){
+            map.put(subst,map.getOrDefault(subst,0)+1);
+        }
+        System.out.println("Word Frequencies in a string are:");
+        Set<String> keys = map.keySet();
+        for(String key: keys){
+                System.out.println(key+" : "+map.get(key));
+        }
+    }
+}
