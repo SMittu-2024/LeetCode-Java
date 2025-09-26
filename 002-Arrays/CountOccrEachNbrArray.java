@@ -1,25 +1,19 @@
 package Arrays;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class CountOccrEachNbrArray {
 
 	public static void main(String[] args) {
 		int[] arr = { 3, 7, 2, 8, 7, 3, 1, 2 };
-		ArrayList<Integer> list = new ArrayList<Integer>();
+	    HashMap<Integer,Integer> occurences = new HashMap<>();
 
-		int count;
-		for (int i = 0; i < arr.length; i++) {
-			count = 1;
-			for (int j = 0; j < arr.length; j++) {
-				if (arr[i] == arr[j] && !list.contains(arr[i]) && i != j) {
-					count++;
-				}
-			}
-			if (!list.contains(arr[i])) {
-				list.add(arr[i]);
-				System.out.println(arr[i] + " is present " + count + " times.");
-			}
-		}
+    	for(int number:arr){
+        	occurences.put(number,occurences.getOrDefault(number,0)+1);
+    	}
+    	System.out.println("Array elements with their occurences are: ");
+		Set<Integer> keys = occurences.keySet();
+		for(int key:keys)
+		        System.out.println(key+ " : "+ occurences.get(key));
 	}
 }
