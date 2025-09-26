@@ -4,20 +4,20 @@ public class SecondLargestNbr {
 
 	public static void main(String[] args) {
 
-			int[] arr = {10, 100, 80, 20, 25, 30, 30, 45, 50};
-
-			int highest = arr[0];
+			int[] arr = {10, 100, 80, 20, 25, 30, 30, 45, 100, 50};
+			int largest = arr[0];
+			int secondLargest = arr[0];
+			System.out.println("Given array is: ");
 			for(int i=1;i<arr.length;i++) {
-				if(arr[i]>highest) {
-					highest=arr[i];
+			    System.out.println(arr[i] + " ");
+				if(arr[i]>largest) {
+				    secondLargest = largest;
+					largest = arr[i];
+			    }
+				else if (arr[i]>secondLargest && arr[i]!=largest){
+				    secondLargest = arr[i];
 				}
-			}			
-			int secHighest = arr[0];
-			for(int i=1;i<arr.length;i++) {
-				if(arr[i]>secHighest && arr[i]<highest) {
-					secHighest=arr[i];
-				}
-			}			
-			System.out.println("second highest: "+secHighest);				
+			}	
+			System.out.println("Second largest number in array is: " + secondLargest);			
 	}
 }
