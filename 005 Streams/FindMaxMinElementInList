@@ -1,0 +1,10 @@
+import java.util.*;
+class FindMaxMinElementInList {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(2, 3, 5, 6, 7, 8, 9);
+        int max = numbers.stream().max(Integer::compare).get();
+        System.out.println("Maximum number in the list is: " + max);
+        int min = numbers.stream().min(Integer::compare).get();
+        System.out.println("Minimum number in the list is: " + min);
+    }
+}
