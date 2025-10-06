@@ -1,4 +1,4 @@
-// .Count occurrences of each word in a sentence.
+// Count occurrences of each word in a sentence.
 // E.g. String str = "java is fun and java is powerful";
 // Output: java=2, powerful=1, and=1, is=2, fun=1
 
