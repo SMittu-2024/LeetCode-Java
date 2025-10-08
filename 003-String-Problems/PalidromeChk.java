@@ -1,22 +1,24 @@
-package Strings;
+//Example Input: "madam"
+//Output: String is palindrome
 
-public class PalindromeStr {
-
-	public static void main(String[] args) {
-
-		String str = "namana";
-		System.out.println("The string is: "+str);
-		String temp="";
-		for(int i = str.length()-1; i>=0; i--) {
-			temp += str.charAt(i);
-		}
-		
-		//check if contents of both the strings are equal
-		if(temp.equalsIgnoreCase(str)) {
-			System.out.println("The string is palindrome");
-		}
-		else {
-			System.out.println("The string is palindrome");
-		}
-	}
+class PalidromeChk {
+    public static void main(String[] args) {
+        String str="radar";
+        char[] arr = str.toCharArray();
+        int left = 0;
+        int right = arr.length-1;
+        boolean isPalindrome = true;
+        while(left<right){
+            if(arr[left]!=arr[right]){
+                isPalindrome = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+        if(isPalindrome)
+            System.out.println("String is palindrome");
+        else
+            System.out.println("String is not palindrome");
+    }
 }
